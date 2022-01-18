@@ -18,7 +18,7 @@ namespace ShenanigansCoffeShop.Controllers
         public ActionResult ProcessLogin(UserModel userModel)
         {
 
-            return View("LoginSuccess", userModel);
+            return View("Index", userModel);
         }
     }
 }
