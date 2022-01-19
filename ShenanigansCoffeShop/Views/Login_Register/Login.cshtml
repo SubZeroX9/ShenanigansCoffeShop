@@ -7,7 +7,7 @@
     
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="form-group">
-        <label for="Email_Add">Email address</label>
+        <label asp-for="" for="Email_Add">Email address</label>
         <input type="email" class="form-control" id="Email_Add" aria-describedby="emailHelp" placeholder="Enter email">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
@@ -16,10 +16,13 @@
         <input type="password" class="form-control" id="Password" placeholder="Password">
     </div>
     <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Remember me?</label>
+        <input type="checkbox" class="form-check-input" id="rememberCheckBox">
+        <label class="form-check-label" for="rememberCheckBox">Remember me?</label>
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
+    <div>
+        @Html.ActionLink("Not Registered?", "Register", "Login_Register")
+    </div>
 </form>
 
 
