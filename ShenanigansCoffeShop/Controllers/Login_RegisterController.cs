@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ShenanigansCoffeShop.Dal;
 using ShenanigansCoffeShop.Models;
 
 namespace ShenanigansCoffeShop.Controllers
@@ -18,6 +19,7 @@ namespace ShenanigansCoffeShop.Controllers
         public ActionResult ProcessLogin(UserModel userModel)
         {
 
+
             return View("Login", userModel);
         }
 
@@ -26,12 +28,23 @@ namespace ShenanigansCoffeShop.Controllers
             return View("Register");
         }
 
-        public ActionResult ProccessRegister()
+        public ActionResult ProccessRegister(UserModel user)
         {
+            if (ModelState.IsValid)
+            {
+                UserDal userdal = new UserDal();
 
 
 
-            return View("Login");
+                return View("Login");
+            }
+            else
+            {
+                return View("Register",user);
+            }
+
+
+            return View("Register", user);
         }
     }
 }
