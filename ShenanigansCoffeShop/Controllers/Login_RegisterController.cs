@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ShenanigansCoffeShop.Dal;
 using ShenanigansCoffeShop.Models;
+using ShenanigansCoffeShop.ViewModel;
 
 namespace ShenanigansCoffeShop.Controllers
 {
@@ -18,7 +19,9 @@ namespace ShenanigansCoffeShop.Controllers
 
         public ActionResult ProcessLogin(UserModel userModel)
         {
-
+            UserDal userdal = new UserDal();
+            UserViewModel uvm = new UserViewModel();
+            uvm.Users = userdal.Users.ToList<UserModel>();
 
             return View("Login", userModel);
         }
