@@ -129,10 +129,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Login_RegisterController.cs" />
+    <Compile Include="Dal\CTableDal.cs" />
+    <Compile Include="Dal\ItemDal.cs" />
     <Compile Include="Dal\UserDal.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CTableModel.cs" />
+    <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
@@ -172,6 +176,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login_Register\Login.cshtml" />
     <Content Include="Views\Login_Register\Register.cshtml" />
+    <Content Include="Views\Login_Register\RegisterSuccess.cshtml" />
+    <Content Include="Views\Shared\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

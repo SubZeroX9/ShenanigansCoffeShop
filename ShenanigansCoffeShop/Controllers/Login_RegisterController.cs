@@ -17,13 +17,34 @@ namespace ShenanigansCoffeShop.Controllers
             return View("Login");
         }
 
+        [HttpPost]
         public ActionResult ProcessLogin(UserModel userModel)
         {
             UserDal userdal = new UserDal();
             UserViewModel uvm = new UserViewModel();
-            uvm.Users = userdal.Users.ToList<UserModel>();
+            uvm.Users = userdal.Users.ToList<UserModel>(); ;
+            UserModel currentUser;
 
-            return View("Login", userModel);
+            currentUser = uvm.Users.Find(x => x.email_addr == userModel.email_addr);
+            
+            if (currentUser != null)
+            {
+                if (userModel.password.Equals(currentUser.password))
+                {
+                   /* ViewBag.ErrorMessage = "Password/Email Incorrect";
+                    ViewData["Email"] = currentUser.email_addr;
+                    ViewData["Password"] = currentUser.password;*/
+                    return View("Login"); // need to add home page mabey to shared
+                }
+                else
+                {
+                    return View("Login", currentUser); //need to add return view with error email dont exist
+                }
+            }
+            else
+            {
+                return View("Login", currentUser); //need to add return view with error email dont exist
+            }
         }
 
         public ActionResult Register()
@@ -31,23 +52,31 @@ namespace ShenanigansCoffeShop.Controllers
             return View("Register");
         }
 
-        public ActionResult ProccessRegister(UserModel user)
+        [HttpPost]
+        public ActionResult ProccessRegister(UserModel userModel)
         {
             if (ModelState.IsValid)
             {
                 UserDal userdal = new UserDal();
-
-
-
-                return View("Login");
+                UserViewModel uvm = new UserViewModel();
+                uvm.Users = userdal.Users.ToList<UserModel>(); ;
+                UserModel currentUser;
+                currentUser = uvm.Users.Find(x => x.email_addr == userModel.email_addr);
+                if (currentUser == null)
+                    return View("Register", userModel); // add error for email registered
+                else
+                {
+                    userModel.membr_type = "regular";
+                    userModel.user_type = "client";
+                    userdal.Users.Add(userModel);
+                    userdal.SaveChanges();
+                    return View("RegisterSuccess");
+                }
             }
             else
             {
-                return View("Register",user);
+                return View("Register", userModel);
             }
-
-
-            return View("Register", user);
         }
     }
 }

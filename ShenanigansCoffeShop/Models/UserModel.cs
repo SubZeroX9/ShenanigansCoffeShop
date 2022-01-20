@@ -10,23 +10,23 @@ namespace ShenanigansCoffeShop.Models
     {
         [Required]
         [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*/d)(?=.*[@$!%*?&])[A-Za-z/d@$!%*?&]{8,16}$",ErrorMessage = "Password length must be minimum of 8 and maximum 16 and contain at least 1 Uppercase letter, 1 LowerCase letter, 1 Number and 1 special character")]
-        public string Password { get; set; }
+        public string password { get; set; }
 
-        public string FirstName { get; set; }
+        public string fname { get; set; }
 
-        public string LastName { get; set; }
+        public string l_num { get; set; }
 
         [Key]
         [Required]
         [RegularExpression("^[/w -/.] +@([/w -] +/.)+[/w-]{2,4}$", ErrorMessage="Please Enter a valid E-Mail")]
-        public string Email { get; set; }
+        public string email_addr { get; set; }
 
-        public string MemberType { get; set; }
+        public string membr_type { get; set; }
 
-        public string UserType { get; set; }
+        public string user_type { get; set; }
 
-        public string PhoneNum { get; set; }
+        public string phone { get; set; }
 
-        public DateTime BirthDay { get; set; }
+        public DateTime birth_day { get; set; }
     }
 }
