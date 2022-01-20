@@ -150,6 +150,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Media\Overzicht.png" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -177,6 +178,7 @@
     <Content Include="Views\Login_Register\Register.cshtml" />
     <Content Include="Views\Login_Register\RegisterSuccess.cshtml" />
     <Content Include="Views\Shared\Index.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
