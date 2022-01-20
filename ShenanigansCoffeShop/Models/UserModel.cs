@@ -10,7 +10,7 @@ namespace ShenanigansCoffeShop.Models
     {
         [Required]
         [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*/d)(?=.*[@$!%*?&])[A-Za-z/d@$!%*?&]{8,16}$",ErrorMessage = "Password length must be minimum of 8 and maximum 16 and contain at least 1 Uppercase letter, 1 LowerCase letter, 1 Number and 1 special character")]
-        public string Password { get; set; }
+        public string Password { get; set; }  
 
         public string FirstName { get; set; }
 

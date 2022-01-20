@@ -38,7 +38,6 @@ namespace ShenanigansCoffeShop.Controllers
                 UserDal userdal = new UserDal();
 
 
-
                 return View("Login");
             }
             else
@@ -46,8 +45,6 @@ namespace ShenanigansCoffeShop.Controllers
                 return View("Register",user);
             }
 
-
-            return View("Register", user);
         }
     }
 }
