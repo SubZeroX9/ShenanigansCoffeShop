@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,7 @@ namespace ShenanigansCoffeShop.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         public ActionResult About()
@@ -28,6 +29,16 @@ namespace ShenanigansCoffeShop.Controllers
         }
 
         public ActionResult Menu()
+        {
+            return View();
+        }
+
+        public ActionResult HotBeverages()
+        {
+            return View();
+        }
+
+        public ActionResult ColdBeverages()
         {
             return View();
         }

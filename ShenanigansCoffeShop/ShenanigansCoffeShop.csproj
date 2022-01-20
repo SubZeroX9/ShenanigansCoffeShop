@@ -149,8 +149,30 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\coffee.jpg" />
+    <Content Include="Media\ColdBeverages\coldCoffe.png" />
+    <Content Include="Media\ColdBeverages\coldCoffe2.png" />
+    <Content Include="Media\ColdBeverages\coldCoffe3.png" />
+    <Content Include="Media\ColdBeverages\coldCoffe4.png" />
+    <Content Include="Media\ColdBeverages\coldCoffe5.png" />
+    <Content Include="Media\ColdBeverages\coldCoffe6.png" />
+    <Content Include="Media\coockies.png" />
+    <Content Include="Media\HotBeverages\coffee.png" />
+    <Content Include="Media\HotBeverages\coffee2.png" />
+    <Content Include="Media\HotBeverages\coffee3.png" />
+    <Content Include="Media\HotBeverages\coffee4.png" />
+    <Content Include="Media\HotBeverages\coffee5.png" />
+    <Content Include="Media\HotBeverages\coffee6.png" />
+    <Content Include="Media\HotBeverages\coffee7.png" />
+    <Content Include="Media\HotBeverages\coffee8.png" />
+    <Content Include="Media\sandwich.png" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Media\cupcake.png" />
+    <Content Include="Media\cookie2.png" />
+    <Content Include="Media\pastries.png" />
+    <Content Include="Media\icedCofee.png" />
     <Content Include="Media\Overzicht.png" />
+    <Content Include="Media\sandwich2.png" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -179,6 +201,8 @@
     <Content Include="Views\Login_Register\RegisterSuccess.cshtml" />
     <Content Include="Views\Shared\Index.cshtml" />
     <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\Home\HotBeverages.cshtml" />
+    <Content Include="Views\Home\ColdBeverages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
