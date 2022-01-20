@@ -21,7 +21,7 @@
 
     <style>
         body {
-            background-image: url("https://lisbon-groupdocs-app.s3.us-west-2.amazonaws.com/Output/b4ef2d02-79ba-448c-8f6e-11437614d165/Overzicht-1024x683.html?X-Amz-Expires=86400&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4XIV7DNDGGIIQ4N7/20220119/us-west-2/s3/aws4_request&X-Amz-Date=20220119T182000Z&X-Amz-SignedHeaders=host&X-Amz-Signature=d3d5655eff3266725c0ef9d20b12733549aa8851b94616aeeaef54971b96f3b4.png");
+            background-image: url('../../Media/Overzicht.png');
             background-repeat: no-repeat;
             background-position: right top;
             background-attachment: fixed;
@@ -32,9 +32,9 @@
 
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid nav-link-light">
-            <a class="navbar-brand">@Html.ActionLink("SHANANIGANS", "Index", "Home")</a>
+            <a class="navbar-brand">@Html.ActionLink("SHANANIGANS", "Index", "Home", null, new { @class = "navbar-brand active link-light" })</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,9 +42,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-light">
                     <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link active link-light" })</li>
-                    <li class="nav-item ">@Html.ActionLink("Login/register", "Login", "Login_Register", null, new { @class = "nav-link active link-light" })</li>
+                    <li class="nav-item ">@Html.ActionLink("Sign-in", "Login", "Login_Register", null, new { @class = "nav-link active link-light" })</li>
                 </ul>
-                <form class="d-flex">
+                <form class="d-flex float-right">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">Search</button>
                 </form>
