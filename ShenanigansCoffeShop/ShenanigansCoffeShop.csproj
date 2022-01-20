@@ -179,6 +179,7 @@
     <Content Include="Views\Login_Register\Register.cshtml" />
     <Content Include="Views\Login_Register\RegisterSuccess.cshtml" />
     <Content Include="Views\Shared\Index.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
