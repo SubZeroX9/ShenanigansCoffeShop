@@ -48,6 +48,7 @@ namespace ShenanigansCoffeShop.Controllers
 
         public ActionResult Register()
         {
+            ViewBag.CurrentTime = DateTime.Today.ToString("yyyy-MM-dd");
             return View("Register");
         }
 
@@ -67,6 +68,7 @@ namespace ShenanigansCoffeShop.Controllers
                 {
                     userModel.membr_type = "regular";
                     userModel.user_type = "client";
+                    userModel.l_num = "69";
                     userdal.Users.Add(userModel);
                     userdal.SaveChanges();
                     return View("RegisterSuccess");
