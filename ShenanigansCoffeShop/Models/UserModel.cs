@@ -34,8 +34,8 @@ namespace ShenanigansCoffeShop.Models
         [StringLength(16, MinimumLength = 8, ErrorMessage = "password length must be minimum of 8 and maximum 16")]
         public string password { get; set; }
 
-
-        [StringLength(16, MinimumLength = 8, ErrorMessage = "Phone number must be a minimum of 8 digits")]
+        [Required]
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "Phone number must be a exactly 10 digits")]
         public string phone { get; set; }
 
         public string l_num { get; set; }

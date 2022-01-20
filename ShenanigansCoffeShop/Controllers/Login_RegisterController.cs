@@ -76,6 +76,7 @@ namespace ShenanigansCoffeShop.Controllers
             }
             else
             {
+
                 return View("Register", userModel);
             }
         }

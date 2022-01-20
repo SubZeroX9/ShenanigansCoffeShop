@@ -11,38 +11,42 @@
                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-
-                                <form action="ProcessRegister" class="mx-1 mx-md-4">
+                                
+                                <form action="ProccessRegister" method="post" class="mx-1 mx-md-4">
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="text" id="firstName" name="fname" class="form-control" />
                                             <label class="form-label" for="firstName">First Name</label>
+                                            <input type="text" id="firstName" name="fname" class="form-control" required/>
+
                                         </div>
                                     </div>
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="text" id="LastName" name="lname" class="form-control" />
                                             <label class="form-label" for="LastName">Last Name</label>
+                                            <input type="text" id="LastName" name="lname" class="form-control" required/>
+
                                         </div>
                                     </div>
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="email" id="Email" name="email_addr" class="form-control" />
                                             <label class="form-label" for="Email">Email</label>
+                                            <input type="email" id="Email" name="email_addr" class="form-control" required/>
+
                                         </div>
                                     </div>
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="tel" id="Phone" name="phone" class="form-control" placeholder="050-123-4567" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
                                             <label class="form-label" for="Phone">Phone Number</label>
+                                            <input type="tel" id="Phone" name="phone" class="form-control" placeholder="0501234567" pattern="05[0-9]{8}" required/>
+
                                         </div>
                                     </div>
 
@@ -51,8 +55,8 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <label for="DateOfBirth"><tab /></label><br />
-                                            <input type="date" max=@ViewBag.CurrentTime id="DateOfBirth" name="birth_day" />
+                                            <label for="DateOfBirth"><tab />Date Of Birth</label><br />
+                                            <input type="date" max=@ViewBag.CurrentTime id="DateOfBirth" name="birth_day" required/>
                                         </div>
                                     </div>
 
@@ -61,16 +65,18 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="password" id="Password" name="password" class="form-control" />
                                             <label class="form-label" for="Password">Password</label>
+                                            <input type="password" id="Password" name="password" class="form-control" required/>
+
                                         </div>
                                     </div>
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input type="password" id="ConfirmPassword" class="form-control" />
                                             <label class="form-label" for="ConfirmPassword">Confirm Password</label>
+                                            <input type="password" id="ConfirmPassword" class="form-control" required/>
+
                                         </div>
                                     </div>
 
@@ -86,7 +92,7 @@
                                     </div>
 
                                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                        <button type="button" class="btn btn-primary btn-lg">Register</button>
+                                        <button type="submit" class="btn btn-primary btn-lg">Register</button>
                                     </div>
 
                                 </form>
