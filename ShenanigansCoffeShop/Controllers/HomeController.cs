@@ -8,9 +8,9 @@ namespace ShenanigansCoffeShop.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult homePage()
+        public ActionResult Index()
         {
-            return View("homePage");
+            return View();
         }
 
         public ActionResult About()
