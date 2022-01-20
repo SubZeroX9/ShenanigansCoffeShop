@@ -1,46 +1,66 @@
-﻿@model ShenanigansCoffeShop.Models.UserModel
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
+
 <html>
+
 <head>
+    <link rel="stylesheet" href="mystyle.css">
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <style>
+        body {
+            background-image: url("https://lisbon-groupdocs-app.s3.us-west-2.amazonaws.com/Output/b4ef2d02-79ba-448c-8f6e-11437614d165/Overzicht-1024x683.html?X-Amz-Expires=86400&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4XIV7DNDGGIIQ4N7/20220119/us-west-2/s3/aws4_request&X-Amz-Date=20220119T182000Z&X-Amz-SignedHeaders=host&X-Amz-Signature=d3d5655eff3266725c0ef9d20b12733549aa8851b94616aeeaef54971b96f3b4.png");
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed;
+        }
+        .some-bg{
+            color:red;
+        }
+    </style>
+
 </head>
+
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Register/Login", "Login", "Login_Register")</li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid nav-link-light">
+            <a class="navbar-brand">@Html.ActionLink("SHANANIGANS", "homePage", "Home")</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-light">
+                    <li class="nav-item">@Html.ActionLink("Home", "homePage", "Home",null, new { @class = "nav-link active link-light" })</li>
+                    <li class="nav-item ">@Html.ActionLink("Login/register", "Login", "Login_Register", null, new { @class = "nav-link active link-light" })</li>
                 </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
             </div>
         </div>
-    </div>
+    </nav>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
+
+    <footer class="bg-dark text-center text-white fixed-bottom">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            SHANANIGANS sice © 2022
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
 </body>
 </html>
