@@ -31,19 +31,18 @@ namespace ShenanigansCoffeShop.Controllers
             {
                 if (userModel.password.Equals(currentUser.password))
                 {
-                   /* ViewBag.ErrorMessage = "Password/Email Incorrect";
-                    ViewData["Email"] = currentUser.email_addr;
-                    ViewData["Password"] = currentUser.password;*/
-                    return View("Login"); // need to add home page mabey to shared
+                    return View("Index");
                 }
                 else
                 {
-                    return View("Login", currentUser); //need to add return view with error email dont exist
+                    ModelState.AddModelError("Login_Error", "* Password/Email Incorrect");
+                    return View("Login");
                 }
             }
             else
             {
-                return View("Login", currentUser); //need to add return view with error email dont exist
+                ModelState.AddModelError("Login_Error", "* Password/Email Incorrect");
+                return View("Login");
             }
         }
 

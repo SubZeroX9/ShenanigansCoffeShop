@@ -24,7 +24,5 @@ namespace ShenanigansCoffeShop.Models
         public string m_type { get; set; }
 
         public string image_url { get; set; }
-
-
     }
 }

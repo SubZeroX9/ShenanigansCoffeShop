@@ -7,6 +7,12 @@
 
 
     <div class="form-group">
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="text-danger p-3">
+                @Html.ValidationMessage("Login_Error")
+            </div>
+        }
         <label asp-for="email_addr" for="Email_Add">Email address</label>
         <input name="email_addr" asp-for="email_addr" type="email" class="form-control" id="Email_Add" aria-describedby="emailHelp" placeholder="Enter email" value=@ViewData["Email"]>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -19,7 +25,8 @@
         <input type="checkbox" class="form-check-input" id="rememberCheckBox">
         <label class="form-check-label" for="rememberCheckBox">Remember me?</label>
     </div>
-    @Html.ViewBag.ErrorMessage
+
+    
     <button type="submit" class="btn btn-primary">Login</button>
     <div>
         @Html.ActionLink("Not Registered?", "Register", "Login_Register")
