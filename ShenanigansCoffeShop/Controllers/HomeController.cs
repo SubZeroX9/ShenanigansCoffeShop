@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -28,6 +29,21 @@ namespace ShenanigansCoffeShop.Controllers
         }
 
         public ActionResult Menu()
+        {
+            return View();
+        }
+
+        public ActionResult HotBeverages()
+        {
+            return View();
+        }
+
+        public ActionResult ColdBeverages()
+        {
+            return View();
+        }
+
+        public ActionResult CakesNCupcakes()
         {
             return View();
         }
