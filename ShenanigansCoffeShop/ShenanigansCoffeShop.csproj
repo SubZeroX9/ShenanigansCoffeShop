@@ -128,7 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ItemManageController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\Login_RegisterController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Dal\CTableDal.cs" />
@@ -217,7 +217,7 @@
     <Content Include="Views\Login_Register\RegisterSuccess.cshtml" />
     <Content Include="Views\Shared\Index.cshtml" />
     <Content Include="Views\Menu\Menu.cshtml" />
-    <Content Include="Views\ItemManage\AddItem.cshtml" />
+    <Content Include="Views\Manager\AddItem.cshtml" />
     <Content Include="Views\Menu\HotBeverages.cshtml" />
     <Content Include="Views\Menu\ColdBeverages.cshtml" />
     <Content Include="Views\Menu\CakesNCupcakes.cshtml" />
