@@ -1,17 +1,41 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contact Shananigans Coffee Shop";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<section class="center" style="background-color: #eee; width:40vw; height:70%; vertical-align:middle;">
+    <style>
+        .center {
+            margin: auto;
+            width: 50%;
+            border: 1px solid;
+            padding: 35px;
+        }
+    </style>
+    <h2 style="color:black; font-weight: bold; text-align:center;">@ViewBag.Title</h2>
+    <div class="container-fluid h-70">
+        <form action="" method="post" style="text-align:center;">
+
+            <div class="align-items-center mb-4 row-cols-1">
+
+                <div><label for="fname">First Name</label></div>
+                <div><input type="text" id="fname" name="firstname" placeholder="Your first name" style="width:750px;"></div>
+            </div>
+            <div class="align-items-center mb-4 row-cols-1">
+                <div><label for="lname">Last Name</label></div>
+                <div><input type="text" id="lname" name="lastname" placeholder="Your last name" style="width:750px;"></div>
+            </div>
+            <div class=" align-items-center mb-4 row-cols-1">
+                <div><label for="email">Email Address</label></div>
+                <div><input type="text" id="email" name="email" placeholder="abc@example.com" style="width:750px;"></div>
+            </div>
+            <div class="align-items-center mb-4 row-cols-1">
+                <div><label for="Description">Description</label></div>
+                <div><textarea id="Description" name="Description" placeholder="Write something here.." rows="10" cols="85"> </textarea> <br /></div>
+            </div>
+            <div class="align-items-center mb-4 row-cols-1">
+                <input type="submit" value="Submit" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+</section>
