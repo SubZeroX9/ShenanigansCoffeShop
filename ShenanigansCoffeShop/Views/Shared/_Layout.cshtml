@@ -37,6 +37,9 @@
             width: 300px;
             height: 300px;
         }
+
+
+
     </style>
 
 </head>
@@ -53,6 +56,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-light">
                     <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link active link-light" })</li>
+                    <li class="nav-item">@Html.ActionLink("Menu", "Menu", "Home", null, new { @class = "nav-link active link-light" })</li>
                     <li class="nav-item ">@Html.ActionLink("Sign-in", "Login", "Login_Register", null, new { @class = "nav-link active link-light" })</li>
                 </ul>
                 <form class="d-flex float-right">
