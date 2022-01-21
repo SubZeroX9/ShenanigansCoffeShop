@@ -149,6 +149,14 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\cakes\cake.png" />
+    <Content Include="Media\cakes\cake2.png" />
+    <Content Include="Media\cakes\cake3.png" />
+    <Content Include="Media\cakes\cake4.png" />
+    <Content Include="Media\cakes\cake5.png" />
+    <Content Include="Media\cakes\cake6.png" />
+    <Content Include="Media\cakes\cake7.png" />
+    <Content Include="Media\cakes\cake8.png" />
     <Content Include="Media\coffee.jpg" />
     <Content Include="Media\ColdBeverages\coldCoffe.png" />
     <Content Include="Media\ColdBeverages\coldCoffe2.png" />
@@ -157,6 +165,11 @@
     <Content Include="Media\ColdBeverages\coldCoffe5.png" />
     <Content Include="Media\ColdBeverages\coldCoffe6.png" />
     <Content Include="Media\coockies.png" />
+    <Content Include="Media\cupcakes\cupcake.png" />
+    <Content Include="Media\cupcakes\cupcake2.png" />
+    <Content Include="Media\cupcakes\cupcake3.png" />
+    <Content Include="Media\cupcakes\cupcake4.png" />
+    <Content Include="Media\cupcakes\cupcake5.png" />
     <Content Include="Media\HotBeverages\coffee.png" />
     <Content Include="Media\HotBeverages\coffee2.png" />
     <Content Include="Media\HotBeverages\coffee3.png" />
@@ -203,6 +216,7 @@
     <Content Include="Views\Home\Menu.cshtml" />
     <Content Include="Views\Home\HotBeverages.cshtml" />
     <Content Include="Views\Home\ColdBeverages.cshtml" />
+    <Content Include="Views\Home\CakesNCupcakes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

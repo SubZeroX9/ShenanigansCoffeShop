@@ -42,5 +42,10 @@ namespace ShenanigansCoffeShop.Controllers
         {
             return View();
         }
+
+        public ActionResult CakesNCupcakes()
+        {
+            return View();
+        }
     }
 }
