@@ -18,8 +18,20 @@ namespace ShenanigansCoffeShop.Controllers
             return View();
         }
 
-        public ActionResult ProccessAddItem()
+        public ActionResult ProccessAddItem(ItemModel itemToAdd)
         {
+            ItemDal itemdal = new ItemDal();
+            ItemViewModel ivm = new ItemViewModel();
+            ivm.Items = itemdal.Items.ToList<ItemModel>(); ;
+            ItemModel checkItem;
+            checkItem = ivm.Items.Find(x => x.item_id == itemToAdd.item_id);
+            if (checkItem != null)
+            {
+                ViewBag.ErrorMassage = "Item Id already Exists";
+                return View("AddItem", itemToAdd);
+            }
+
+
             return View("AddItem");
         }
 
@@ -28,6 +40,7 @@ namespace ShenanigansCoffeShop.Controllers
             return View("EditItem", itemToEdit);
         }
 
+        [HttpPost]
         public ActionResult EditItemProccess(ItemModel itemToEdit)
         {
             ItemDal itemdal = new ItemDal();
