@@ -17,6 +17,12 @@ namespace ShenanigansCoffeShop.Controllers
             return View("Login");
         }
 
+        public ActionResult Sign_out()
+        {
+            Session["CurrentUserOBJ"] = null;
+            return View("Index");
+        }
+
         [HttpPost]
         public ActionResult ProcessLogin(UserModel userModel)
         {
@@ -31,6 +37,7 @@ namespace ShenanigansCoffeShop.Controllers
             {
                 if (userModel.password.Equals(currentUser.password))
                 {
+                    Session["CurrentUserOBJ"] = currentUser;
                     return View("Index");
                 }
                 else
