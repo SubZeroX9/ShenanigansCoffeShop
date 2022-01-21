@@ -131,6 +131,8 @@
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\Login_RegisterController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\OrderListController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Dal\CTableDal.cs" />
     <Compile Include="Dal\ItemDal.cs" />
     <Compile Include="Dal\UserDal.cs" />
@@ -225,6 +227,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\OrderList\" />
+    <Folder Include="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

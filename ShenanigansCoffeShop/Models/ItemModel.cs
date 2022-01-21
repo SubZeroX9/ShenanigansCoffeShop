@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace ShenanigansCoffeShop.Models
@@ -27,20 +28,11 @@ namespace ShenanigansCoffeShop.Models
 
         public byte[] Itemimage { get; set; }
 
-        public Image BinaryToImageConv(byte[] binaryData)
+        public void ImageToBinaryConv(HttpPostedFileBase ImagePost)
         {
-            MemoryStream ms = new MemoryStream(binaryData);
-            Image img = Image.FromStream(ms);
-            return img;
-        }
-
-        public byte[] ImageToBinaryConv(Image imageIn)
-        {
-            using (var ms = new MemoryStream())
-            {
-                imageIn.Save(ms, imageIn.RawFormat);
-                return ms.ToArray();
-            }
+            MemoryStream target = new MemoryStream();
+            ImagePost.InputStream.CopyTo(target);
+            Itemimage = target.ToArray();
         }
 
     }

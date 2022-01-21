@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,11 +19,13 @@ namespace ShenanigansCoffeShop.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult ProccessAddItem(ItemModel itemToAdd)
         {
+            itemToAdd.ImageToBinaryConv(Request.Files[0]);
             ItemDal itemdal = new ItemDal();
             ItemViewModel ivm = new ItemViewModel();
-            ivm.Items = itemdal.Items.ToList<ItemModel>(); ;
+            ivm.Items = itemdal.Items.ToList<ItemModel>();
             ItemModel checkItem;
             checkItem = ivm.Items.Find(x => x.item_id == itemToAdd.item_id);
             if (checkItem != null)
@@ -31,6 +34,9 @@ namespace ShenanigansCoffeShop.Controllers
                 return View("AddItem", itemToAdd);
             }
 
+            itemToAdd.availability = true;
+            itemdal.Items.Add(itemToAdd);
+            itemdal.SaveChanges();
 
             return View("AddItem");
         }
