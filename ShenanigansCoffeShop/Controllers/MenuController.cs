@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ShenanigansCoffeShop.Dal;
+using ShenanigansCoffeShop.Models;
+using ShenanigansCoffeShop.ViewModel;
 
 namespace ShenanigansCoffeShop.Controllers
 {
@@ -16,17 +19,26 @@ namespace ShenanigansCoffeShop.Controllers
 
         public ActionResult HotBeverages()
         {
-            return View();
+            ItemDal userdal = new ItemDal();
+            ItemViewModel ivm = new ItemViewModel();
+            ivm.Items = userdal.Items.OrderBy(m => m.popularity).ToList<ItemModel>().FindAll(model=> model.m_type == "HotBeverages");
+            return View("HotBeverages",ivm);
         }
 
         public ActionResult ColdBeverages()
         {
-            return View();
+            ItemDal userdal = new ItemDal();
+            ItemViewModel ivm = new ItemViewModel();
+            ivm.Items = userdal.Items.ToList<ItemModel>().FindAll(model => model.m_type == "ColdBeverages");
+            return View("ColdBeverages", ivm);
         }
 
         public ActionResult CakesNCupcakes()
         {
-            return View();
+            ItemDal userdal = new ItemDal();
+            ItemViewModel ivm = new ItemViewModel();
+            ivm.Items = userdal.Items.ToList<ItemModel>().FindAll(model => model.m_type == "CakesNCupcakes");
+            return View("CakesNCupcakes", ivm);
         }
     }
 }
