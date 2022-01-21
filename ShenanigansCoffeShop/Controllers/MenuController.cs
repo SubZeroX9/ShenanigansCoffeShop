@@ -19,9 +19,9 @@ namespace ShenanigansCoffeShop.Controllers
 
         public ActionResult HotBeverages()
         {
-            ItemDal userdal = new ItemDal();
+            ItemDal itemdal = new ItemDal();
             ItemViewModel ivm = new ItemViewModel();
-            ivm.Items = userdal.Items.OrderBy(m => m.popularity).ToList<ItemModel>().FindAll(model=> model.m_type == "HotBeverages");
+            ivm.Items = itemdal.Items.OrderBy(m => m.popularity).ToList<ItemModel>().FindAll(model=> model.m_type == "HotBeverages");
             return View("HotBeverages",ivm);
         }
 
