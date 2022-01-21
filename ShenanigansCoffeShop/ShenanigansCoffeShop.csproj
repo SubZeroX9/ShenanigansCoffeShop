@@ -130,6 +130,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemManageController.cs" />
     <Compile Include="Controllers\Login_RegisterController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Dal\CTableDal.cs" />
     <Compile Include="Dal\ItemDal.cs" />
     <Compile Include="Dal\UserDal.cs" />
@@ -215,11 +216,11 @@
     <Content Include="Views\Login_Register\Register.cshtml" />
     <Content Include="Views\Login_Register\RegisterSuccess.cshtml" />
     <Content Include="Views\Shared\Index.cshtml" />
-    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\Menu\Menu.cshtml" />
     <Content Include="Views\ItemManage\AddItem.cshtml" />
-    <Content Include="Views\Home\HotBeverages.cshtml" />
-    <Content Include="Views\Home\ColdBeverages.cshtml" />
-    <Content Include="Views\Home\CakesNCupcakes.cshtml" />
+    <Content Include="Views\Menu\HotBeverages.cshtml" />
+    <Content Include="Views\Menu\ColdBeverages.cshtml" />
+    <Content Include="Views\Menu\CakesNCupcakes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

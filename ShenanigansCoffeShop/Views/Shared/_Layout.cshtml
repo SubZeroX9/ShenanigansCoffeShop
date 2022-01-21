@@ -59,6 +59,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-light">
                     <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link active link-light" })</li>
+                    <li class="nav-item">@Html.ActionLink("Menu", "Menu", "Menu", null, new { @class = "nav-link active link-light" })</li>
                     @if (Session["CurrentUserOBJ"] != null)
                     {
                         UserModel currentuser = (UserModel)Session["CurrentUserOBJ"];
@@ -84,7 +85,7 @@
                     }
                     else
                     {
-                    <li class="nav-item ">@Html.ActionLink("Sign-in", "Login", "Login_Register", null, new { @class = "nav-link active link-light" })</li>
+                        <li class="nav-item ">@Html.ActionLink("Sign-in", "Login", "Login_Register", null, new { @class = "nav-link active link-light" })</li>
                     }
 
 

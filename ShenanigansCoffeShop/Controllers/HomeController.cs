@@ -28,24 +28,5 @@ namespace ShenanigansCoffeShop.Controllers
             return View();
         }
 
-        public ActionResult Menu()
-        {
-            return View();
-        }
-
-        public ActionResult HotBeverages()
-        {
-            return View();
-        }
-
-        public ActionResult ColdBeverages()
-        {
-            return View();
-        }
-
-        public ActionResult CakesNCupcakes()
-        {
-            return View();
-        }
     }
 }
