@@ -221,7 +221,6 @@
     <Content Include="Views\Menu\HotBeverages.cshtml" />
     <Content Include="Views\Menu\ColdBeverages.cshtml" />
     <Content Include="Views\Menu\CakesNCupcakes.cshtml" />
-    <Content Include="Views\ItemManage\EditItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
