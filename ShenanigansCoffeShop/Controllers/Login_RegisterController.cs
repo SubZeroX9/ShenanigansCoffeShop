@@ -32,7 +32,8 @@ namespace ShenanigansCoffeShop.Controllers
             uvm.Users = userdal.Users.ToList<UserModel>(); ;
             UserModel currentUser;
 
-            currentUser = uvm.Users.Find(x => x.email_addr == userModel.email_addr);
+
+        currentUser = uvm.Users.Find(x => x.email_addr == userModel.email_addr);
             
             if (currentUser != null)
             {
