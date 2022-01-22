@@ -244,6 +244,7 @@
     <Content Include="Views\Manager\EditTable.cshtml" />
     <Content Include="Views\Tables\ChooseTable.cshtml" />
     <Content Include="Views\Manager\Barista.cshtml" />
+    <Content Include="Views\Payment\PaymentSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
