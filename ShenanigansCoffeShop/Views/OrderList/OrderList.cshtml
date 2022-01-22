@@ -39,6 +39,8 @@
                                         </tbody>
                                     </table>
                                     <div style="padding-top: 1rem;">Total Price: @(((ShenanigansCoffeShop.Models.TotalOrderModel)Session["CurrentOrderObj"]).totalprice)₪</div>
+                                    <div>@Html.ActionLink("Cash Payment", "CashPayment","Payment", null, new { @class = "btn btn-dark p-3 m-2" })</div>
+                                    <div>@Html.ActionLink("Credit Card Payment", "CreditCardPayment", "Payment",null,new{@class="btn btn-dark p-3 m-2"})</div>
                                 }
                                 else
                                 {
