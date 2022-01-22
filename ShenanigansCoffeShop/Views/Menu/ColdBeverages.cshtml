@@ -1,5 +1,7 @@
 ﻿@model ShenanigansCoffeShop.ViewModel.ItemViewModel
-
+<br />
+<br />
+<br />
 <div class="w-auto p-3" style="background-color:white;">
 
     <div class="d-flex justify-content-center"><p class="font" style="font-size: 50px">Cold & Iced Beverages</p></div>
@@ -18,7 +20,7 @@
                             <p class="card-text">@item.descript<br /><h4>price:@item.price₪</h4></p>
                             @if (@item.availability)
                             {
-                                @Html.ActionLink("Add to cart", "AddToOrderList","OrderList", item,new{@class = "btn btn-dark" })
+                                @Html.ActionLink("Add to cart", "AddToOrderList", "OrderList", item, new { @class = "btn btn-dark" })
                             }
                             else
                             {
@@ -123,3 +125,6 @@
     </div>
 
 </div>
+<br />
+<br />
+<br />

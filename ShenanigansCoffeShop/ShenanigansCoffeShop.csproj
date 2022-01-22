@@ -240,8 +240,9 @@
     <Content Include="Views\OrderList\OrderList.cshtml" />
     <Content Include="Views\Payment\CreditCardPayment.cshtml" />
     <Content Include="Views\Payment\CashPayment.cshtml" />
-    <Content Include="Views\Manager\EditTables.cshtml" />
+    <Content Include="Views\Manager\EditTable.cshtml" />
     <Content Include="Views\Tables\ChooseTable.cshtml" />
+    <Content Include="Views\Manager\Barista.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

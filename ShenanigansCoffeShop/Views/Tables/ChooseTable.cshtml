@@ -1,67 +1,48 @@
 ﻿@model ShenanigansCoffeShop.ViewModel.TableViewModel
+
 <div class="container-fluid">
 
     <div class="w-auto p-3" style="background-color:white;">
-        <div class="d-flex justify-content-left"><p class="font" style="font-size: 35px">Inside</p></div>
-        <br />
+       
         <div class="container">
-            <div class="row col-md-3">
-                <div class="row"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                <div class="row"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                <div class="row"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                <div class="row"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                <div class="row"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                <div class="row"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                <div class="row"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                <div class="row"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                <div class="row"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                <div class="row"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-
+            <div class="d-flex justify-content-left"><p class="font" style="font-size: 35px;">Inside</p></div>
+            <div class="row g-5  row-cols-4">
+                @foreach (ShenanigansCoffeShop.Models.CTableModel cTable in Model.Tables)
+                {
+                    if (cTable.t_type == "IN")
+                    {
+                        if (cTable.availability)
+                        {
+                            <div class="col"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;">@cTable.s_num</button></div>
+                        }
+                        else
+                        {
+                            <div class="col"><button type="button" disabled class="btn" style="width:65px; height:65px; background-color:red; border-radius:50%;"></button></div>
+                        }
+                    }
+                }
             </div>
+            <div class="d-flex justify-content-left"><p class="font" style="font-size: 35px; padding-top:0.5rem; padding-bottom:0.5rem; ">Outside</p></div>
+            <div class="row g-5 row-cols-4">
+                @foreach (ShenanigansCoffeShop.Models.CTableModel cTable in Model.Tables)
+                {
+                    if (cTable.t_type == "OUT")
+                    {
+                        if (cTable.availability)
+                        {
+                            <div class="col"><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;">@cTable.s_num</button></div>
+                        }
+                        else
+                        {
+                            <div class="col"><button type="button" disabled class="btn" style="width:65px; height:65px; background-color:red; border-radius:50%;"></button></div>
+                        }
+                    }
+                }
             </div>
         </div>
+    </div>
         <div class="container">
             <div class="row py-3 px-lg-5">
             </div>
         </div>
-    </div>
-
-    <div class="w-auto p-3" style="background-color:white;">
-        <div class="d-flex justify-content-left"><p class="font" style="font-size: 35px">Outside</p></div>
-        <br />
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br />
-
-                </div>
-                <div class="col">
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br />
-
-                </div>
-                <div class="col">
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br />
-
-                </div>
-                <div class="col">
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br /><br />
-                    <div><button type="button" class="btn" style="width:65px; height:65px; background-color:lawngreen; border-radius:50%;"></button></div><br />
-
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row py-3 px-lg-5">
-            </div>
-        </div>
-    </div>
-
-
 </div>

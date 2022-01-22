@@ -61,15 +61,18 @@ namespace ShenanigansCoffeShop.Controllers
             return View("Index");
         }
 
-        public ActionResult EditTables()
+        public ActionResult EditTable()
         {
-
-
-
+            ViewBag.CurrentTime = DateTime.Today.ToString("MM");
             return View();
         }
 
         public ActionResult TableEdit()
+        {
+            return View();
+        }
+
+        public ActionResult Barista()
         {
             return View();
         }
