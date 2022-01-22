@@ -16,18 +16,29 @@
                                     <h2>Order No: @(((ShenanigansCoffeShop.Models.TotalOrderModel)Session["CurrentOrderObj"]).o_num)</h2>
                                     <hr/>
 
-                                    foreach (ShenanigansCoffeShop.Models.OrderListModel order in Model.Orders)
-                                    {
-                                        for (int i = 0; i < order.num_of_orders; i++)
-                                        {
-                                            <div class="row py-3 px-lg-5">
-                                                <div class="col py-3 px-lg-5">@order.item_id</div>
-                                                <div class="col py-3 px-lg-5">@order.item_name</div>
-                                                <div class="col py-3 px-lg-5">@order.price₪</div>
-                                            </div>
-                                        }
-                                    }
-                                    <div>Total Price: @(((ShenanigansCoffeShop.Models.TotalOrderModel)Session["CurrentOrderObj"]).totalprice)₪</div>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>Item Id</th>
+                                            <th>Item Name</th>
+                                            <th>Item Price</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (ShenanigansCoffeShop.Models.OrderListModel order in Model.Orders)
+                                            {
+                                                for (int i = 0; i < order.num_of_orders; i++)
+                                                {
+                                                <tr>
+                                                    <td>@order.item_id</td>
+                                                    <td>@order.item_name</td>
+                                                    <td>@order.price₪</td>
+                                                </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <div style="padding-top: 1rem;">Total Price: @(((ShenanigansCoffeShop.Models.TotalOrderModel)Session["CurrentOrderObj"]).totalprice)₪</div>
                                 }
                                 else
                                 {
