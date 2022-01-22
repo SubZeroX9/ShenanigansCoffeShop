@@ -76,5 +76,14 @@ namespace ShenanigansCoffeShop.Controllers
         {
             return View();
         }
+
+        public ActionResult OrderForClient()
+        {
+            string email = Request .Form["Email"];
+            UserDal userDal = new UserDal();
+            UserModel userModel = userDal.Users.ToList<UserModel>().Find(x=> x.email_addr == email);
+
+            return View("Barista", userModel);
+        }
     }
 }
