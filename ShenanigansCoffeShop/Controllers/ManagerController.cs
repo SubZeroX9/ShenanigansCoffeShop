@@ -61,10 +61,8 @@ namespace ShenanigansCoffeShop.Controllers
             return View("Index");
         }
 
-        public ActionResult EditTables()
+        public ActionResult EditTable()
         {
-
-
 
             return View();
         }
