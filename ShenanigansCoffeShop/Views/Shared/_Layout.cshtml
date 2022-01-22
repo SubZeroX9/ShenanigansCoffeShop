@@ -68,21 +68,24 @@
                                 </ul>
                             </li>
                         }
+
+                        <li class="nav-item ">@Html.ActionLink("Contact Us", "Contact", "Home", null, new { @class = "nav-link link-light" })</li>
+                        <li class="nav-item ">@Html.ActionLink("About Us", "About", "Home", null, new { @class = "nav-link link-light" })</li>
+                        <li class="nav-item ">@Html.ActionLink("Choose Table", "ChooseTable", "Tables", null, new { @class = "nav-link link-light" })</li>
                         <li class="nav-item ">
                             @Html.ActionLink("Hello, " + currentuser.fname + " Sign-out", "Sign_out", "Login_Register", null, new { @class = "nav-link link-light" })
                         </li>
-                        <li class="nav-item ">@Html.ActionLink("Choose Table", "ChooseTable", "Tables", null, new { @class = "nav-link link-light" })</li>
-
                     }
                     else
                     {
+                        <li class="nav-item ">@Html.ActionLink("Contact Us", "Contact", "Home", null, new { @class = "nav-link link-light" })</li>
+                        <li class="nav-item ">@Html.ActionLink("About Us", "About", "Home", null, new { @class = "nav-link link-light" })</li>
                         <li class="nav-item ">@Html.ActionLink("Sign-in", "Login", "Login_Register", null, new { @class = "nav-link link-light" })</li>
                     }
 
 
 
-                    <li class="nav-item ">@Html.ActionLink("About Us", "About", "Home", null, new { @class = "nav-link link-light" })</li>
-                    <li class="nav-item ">@Html.ActionLink("Contact Us", "Contact", "Home", null, new { @class = "nav-link link-light" })</li>
+
                     <a class="navbar-brand" href="@Url.Action("OrderList", "OrderList")">
                         <img src="..\..\Media\shoppingcart.png" style="width:40px; height: 40px;" class="d-inline-block align-top" alt="" loading="lazy">
                     </a>
