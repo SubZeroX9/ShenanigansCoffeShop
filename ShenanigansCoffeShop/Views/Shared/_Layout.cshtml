@@ -40,7 +40,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid nav-link-light">
-            <li class="nav-item"><img src="..\..\Media\GOAT.png" style="width:40px; height: 40px;" /></li>
+            <a class="navbar-brand"><img src="..\..\Media\GOAT.png" style="width:40px; height: 40px;" /></a>
             <a class="navbar-brand">@Html.ActionLink("SHANANIGANS", "Index", "Home", null, new { @class = "navbar-brand active link-light" })</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -64,25 +64,34 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                                     <li>@Html.ActionLink("Add Item", "AddItem", "Manager", null, new { @class = "dropdown-item nav-link link-light" })</li>
-                                    <li>@Html.ActionLink("Edit Item", "EditTables", "Manager", null, new { @class = "dropdown-item nav-link link-light" })</li>
+                                    <li>@Html.ActionLink("Edit Item", "EditTable", "Manager", null, new { @class = "dropdown-item nav-link link-light" })</li>
                                 </ul>
                             </li>
                         }
+
+                        <li class="nav-item ">@Html.ActionLink("Contact Us", "Contact", "Home", null, new { @class = "nav-link link-light" })</li>
+                        <li class="nav-item ">@Html.ActionLink("About Us", "About", "Home", null, new { @class = "nav-link link-light" })</li>
+                        <li class="nav-item ">@Html.ActionLink("Choose Table", "ChooseTable", "Tables", null, new { @class = "nav-link link-light" })</li>
                         <li class="nav-item ">
                             @Html.ActionLink("Hello, " + currentuser.fname + " Sign-out", "Sign_out", "Login_Register", null, new { @class = "nav-link link-light" })
                         </li>
                     }
                     else
                     {
+                        <li class="nav-item ">@Html.ActionLink("Contact Us", "Contact", "Home", null, new { @class = "nav-link link-light" })</li>
+                        <li class="nav-item ">@Html.ActionLink("About Us", "About", "Home", null, new { @class = "nav-link link-light" })</li>
                         <li class="nav-item ">@Html.ActionLink("Sign-in", "Login", "Login_Register", null, new { @class = "nav-link link-light" })</li>
                     }
 
 
 
-
+                <li>
                     <a class="navbar-brand" href="@Url.Action("OrderList", "OrderList")">
                         <img src="..\..\Media\shoppingcart.png" style="width:40px; height: 40px;" class="d-inline-block align-top" alt="" loading="lazy">
                     </a>
+                </li>
+
+
                 </ul>
                 <form class="d-flex float-right">
                     <input class="form-control me-2 float-right" type="search" placeholder="Search" aria-label="Search">

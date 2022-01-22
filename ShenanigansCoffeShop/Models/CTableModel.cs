@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,6 +8,7 @@ namespace ShenanigansCoffeShop.Models
 {
     public class CTableModel
     {
+        [Key]
         public int t_num { get; set; }
 
         public string t_type { get; set; }
