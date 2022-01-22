@@ -13,11 +13,11 @@ namespace ShenanigansCoffeShop.Controllers
         // GET: Tables
         public ActionResult ChooseTable()
         {
-            // CTableDal ctable = new CTableDal();
-            // TableViewModel tvm = new TableViewModel();
-            // tvm.Tables = ctable.Tables.ToList<CTableModel>();
+            CTableDal ctable = new CTableDal();
+            TableViewModel tvm = new TableViewModel();
+            tvm.Tables = ctable.Tables.ToList<CTableModel>();
 
-            return View("ChooseTable");//, tvm);
+            return View("ChooseTable", tvm);
         }
     }
 }

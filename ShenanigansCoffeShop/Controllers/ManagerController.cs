@@ -54,7 +54,6 @@ namespace ShenanigansCoffeShop.Controllers
             ivm.Items = itemdal.Items.ToList<ItemModel>(); ;
             ItemModel checkItem;
             checkItem = ivm.Items.Find(x => x.item_id == itemToEdit.item_id);
-            // need to add check that item id notchange to one already existing or remove possebility to change item id
             checkItem = itemToEdit;
             itemdal.SaveChanges();
 
@@ -64,11 +63,6 @@ namespace ShenanigansCoffeShop.Controllers
         public ActionResult EditTable()
         {
             ViewBag.CurrentTime = DateTime.Today.ToString("MM");
-            return View();
-        }
-
-        public ActionResult TableEdit()
-        {
             return View();
         }
 
