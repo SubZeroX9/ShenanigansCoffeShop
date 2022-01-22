@@ -66,7 +66,7 @@ namespace ShenanigansCoffeShop.Controllers
 
 
 
-            return View("Index");
+            return View();
         }
 
         public ActionResult TableEdit()
