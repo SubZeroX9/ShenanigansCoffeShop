@@ -18,5 +18,6 @@ namespace ShenanigansCoffeShop.Models
         public int s_num { get; set; }
 
         public string l_num { get; set; }
+
     }
 }

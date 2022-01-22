@@ -39,7 +39,7 @@ namespace ShenanigansCoffeShop.Controllers
                 if (userModel.password.Equals(currentUser.password))
                 {
                     TotalOrderDal TOdal = new TotalOrderDal();
-                    Session["CurrentOrderObj"] = TOdal.TotalOrderList.ToList().Find(x => x.email_addr == currentUser.email_addr && x.currentOrder);
+                    Session["CurrentOrderObj"] = TOdal.TotalOrderList.Where(x => x.email_addr == currentUser.email_addr && x.currentOrder).FirstOrDefault();
                     Session["CurrentUserOBJ"] = currentUser;
                     return View("Index");
                 }

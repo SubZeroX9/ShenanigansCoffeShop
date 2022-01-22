@@ -19,5 +19,7 @@ namespace ShenanigansCoffeShop.Models
 
         public string email_addr { get; set; }
 
+        public int t_num { get; set; }
+
     }
 }

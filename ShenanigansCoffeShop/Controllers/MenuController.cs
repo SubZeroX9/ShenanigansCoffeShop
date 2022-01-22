@@ -23,7 +23,7 @@ namespace ShenanigansCoffeShop.Controllers
             ItemDal itemdal = new ItemDal();
             ItemViewModel ivm = new ItemViewModel();
             ivm.Items = itemdal.Items.OrderBy(m => m.popularity).ToList<ItemModel>().FindAll(model=> model.m_type == "HotBeverages");
-            return View("HotBeverages",ivm);
+            return View("ItemDisplay",ivm);
         }
 
         public ActionResult ColdBeverages()
@@ -31,7 +31,7 @@ namespace ShenanigansCoffeShop.Controllers
             ItemDal userdal = new ItemDal();
             ItemViewModel ivm = new ItemViewModel();
             ivm.Items = userdal.Items.ToList<ItemModel>().FindAll(model => model.m_type == "ColdBeverages");
-            return View("ColdBeverages", ivm);
+            return View("ItemDisplay", ivm);
         }
 
         public ActionResult CakesNCupcakes()
@@ -39,7 +39,30 @@ namespace ShenanigansCoffeShop.Controllers
             ItemDal userdal = new ItemDal();
             ItemViewModel ivm = new ItemViewModel();
             ivm.Items = userdal.Items.ToList<ItemModel>().FindAll(model => model.m_type == "CakesNCupcakes");
-            return View("CakesNCupcakes", ivm);
+            return View("ItemDisplay", ivm);
+        }
+        public ActionResult Pastries()
+        {
+            ItemDal userdal = new ItemDal();
+            ItemViewModel ivm = new ItemViewModel();
+            ivm.Items = userdal.Items.ToList<ItemModel>().FindAll(model => model.m_type == "Pastries");
+            return View("ItemDisplay", ivm);
+        }
+
+        public ActionResult Cookies()
+        {
+            ItemDal userdal = new ItemDal();
+            ItemViewModel ivm = new ItemViewModel();
+            ivm.Items = userdal.Items.ToList<ItemModel>().FindAll(model => model.m_type == "cookies");
+            return View("ItemDisplay", ivm);
+        }
+
+        public ActionResult Sandwitches()
+        {
+            ItemDal userdal = new ItemDal();
+            ItemViewModel ivm = new ItemViewModel();
+            ivm.Items = userdal.Items.ToList<ItemModel>().FindAll(model => model.m_type == "sandwiches");
+            return View("ItemDisplay", ivm);
         }
     }
 }
