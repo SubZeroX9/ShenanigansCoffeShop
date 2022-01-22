@@ -26,9 +26,13 @@
                       <div class="col-md-10">
                           @if (ViewBag.CurrentTime == "12" || ViewBag.CurrentTime == "01" || ViewBag.CurrentTime == "02" || ViewBag.CurrentTime == "03")
                           {
-                             <br/><lable>tables are available only inside</lable>
+                              <br /><lable>During the winter, tables can only be inside</lable>
+                              <select name="tableType" id="tableType">
+                                  <option value="IN">Inside</option>
+                              </select>
                           }
-                          else{
+                          else
+                          {
                               <select name="tableType" id="tableType">
                                   <option value="IN">Inside</option>
                                   <option value="OUT">Outside</option>
