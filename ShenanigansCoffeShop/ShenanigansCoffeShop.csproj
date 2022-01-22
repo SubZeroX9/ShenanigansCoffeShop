@@ -183,6 +183,8 @@
     <Content Include="Media\cupcakes\cupcake3.png" />
     <Content Include="Media\cupcakes\cupcake4.png" />
     <Content Include="Media\cupcakes\cupcake5.png" />
+    <Content Include="Media\FC.png" />
+    <Content Include="Media\FS.png" />
     <Content Include="Media\GBj.gif" />
     <Content Include="Media\giphy.gif" />
     <Content Include="Media\GOAT.png" />
@@ -195,6 +197,7 @@
     <Content Include="Media\HotBeverages\coffee7.png" />
     <Content Include="Media\HotBeverages\coffee8.png" />
     <Content Include="Media\mail.gif" />
+    <Content Include="Media\RB.png" />
     <Content Include="Media\sandwich.png" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Media\cupcake.png" />
