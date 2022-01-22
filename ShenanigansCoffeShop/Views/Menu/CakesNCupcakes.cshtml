@@ -9,7 +9,7 @@
             @foreach (ShenanigansCoffeShop.Models.ItemModel item in Model.Items)
             {
                 <div class="col py-3 px-lg-5">
-                    <div class="card" style="width: 16rem;">
+                    <div class="card" style="width: 16rem;" action="AddToOrderList" method="post">
                         <img src="data:image;base64,@System.Convert.ToBase64String(item.Itemimage)" class="card-img-top" style="width: 15rem; height: 15rem;">
                         <div class="card-body">
                             <h4 class="card-title">@item.item_name</h4>
@@ -20,7 +20,7 @@
                             }
                             else
                             {
-                                <a href="#" class="btn btn-secondary">Unavailable</a>
+                                <a href="#" class="btn btn-dark">Unavailable</a>
                             }
 
                         </div>
