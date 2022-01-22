@@ -1,38 +1,55 @@
 ﻿@model ShenanigansCoffeShop.Models.UserModel
+<br/><br/>
+<div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+            <div class="card text-black" style="border-radius: 25px;">
+                <div class="card-body p-md-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" font-family: Lucida Handwriting;">Please Login</p>
+                            <form action="ProcessLogin" method="post" style="align-content:center;">
+                                <form action="ProcessLogin" method="post">
+
+                                    <hr />
 
 
-<form action="ProcessLogin" method="post">
-    <h4>Welcome Guest,</h4> <h5><br /> Please Login</h5>
-    <hr />
+                                    <div class="form-group">
+                                        @if (!ViewData.ModelState.IsValid)
+                                        {
+                                            <div class="text-danger p-3">
+                                                @Html.ValidationMessage("Login_Error")
+                                            </div>
+                                        }
+                                        <label asp-for="email_addr" for="Email_Add">Email address</label>
+                                        <input name="email_addr" asp-for="email_addr" type="email" class="form-control" id="Email_Add" aria-describedby="emailHelp" placeholder="Enter email" value=@ViewData["Email"]>
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="password" for="Password">Password</label>
+                                        <input name="password" asp-for="password" type="password" class="form-control" id="Password" placeholder="Password" value=@ViewData["Password"]>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberCheckBox">
+                                        <label class="form-check-label" for="rememberCheckBox">Remember me</label>
+                                    </div>
+                                    @Html.ViewBag.ErrorMessage
+                                    <br /><button type="submit" class="btn btn-dark">Login</button>
+                                    <div>
+                                        <br /> @Html.ActionLink("Not Registered yet?", "Register", "Login_Register")
+                                    </div>
+                                </form>
+                            </form>
 
-
-    <div class="form-group">
-        @if (!ViewData.ModelState.IsValid)
-        {
-            <div class="text-danger p-3">
-                @Html.ValidationMessage("Login_Error")
+                        </div>
+                    </div>
+                </div>
             </div>
-        }
-        <label asp-for="email_addr" for="Email_Add">Email address</label>
-        <input name="email_addr" asp-for="email_addr" type="email" class="form-control" id="Email_Add" aria-describedby="emailHelp" placeholder="Enter email" value=@ViewData["Email"]>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="password" for="Password">Password</label>
-        <input name="password" asp-for="password" type="password" class="form-control" id="Password" placeholder="Password" value=@ViewData["Password"]>
-    </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="rememberCheckBox">
-        <label class="form-check-label" for="rememberCheckBox">__Remember me</label>
-    </div>
-    @Html.ViewBag.ErrorMessage
-    <br /><button type="submit" class="btn btn-primary">Login</button>
-    <div>
-        <br /> @Html.ActionLink("Not Registered?", "Register", "Login_Register")
-    </div>
-</form>
-
-
+</div>
+<br/><br/>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

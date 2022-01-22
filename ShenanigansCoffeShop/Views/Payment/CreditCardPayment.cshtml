@@ -1,0 +1,61 @@
+﻿
+@model ShenanigansCoffeShop.Models.UserModel
+<br />
+<br />
+<div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+            <div class="card text-black" style="border-radius: 25px;">
+                <div class="card-body p-md-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" font-family: Lucida Handwriting;">Payment</p>
+                            <form action="ProcessLogin" method="post" style="align-content:center;">
+
+
+
+                                <div class="form-group">
+                                    @if (!ViewData.ModelState.IsValid)
+                                    {
+                                        <div class="text-danger p-3">
+                                            @Html.ValidationMessage("Invalid Details")
+                                        </div>
+                                    }
+                                    <label for="fname">Credit Card Number</label><br />
+                                    <input type="text" id="CCN" name="CCN" placeholder="0000 0000 0000 0000" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" required><br />
+
+
+                                    <label for="ExpireDate"><tab />Expire Date</label><br />
+                                    <input type="date" max=@ViewBag.CurrentTime id="ExpireDate" name="ExpireDate" required /><br />
+
+                                    <label for="CVV">CVV (Security Number)</label><br />
+                                    <input type="number" id="CVV" name="CVV" pattern="[0-9]{3}"><br />
+
+                                    <label for="ID">ID Number</label><br />
+                                    <input type="number" id="ID" name="ID" pattern="[0-9]{9}"><br />
+
+                                    <label for="fname">First Name:</label><br />
+                                    <input type="text" id="fname" name="fname"><br />
+
+                                    <label for="lanem">Last Name:</label><br>
+                                    <input type="text" id="lname" name="lanme"><br />
+                                </div>
+
+                                @Html.ViewBag.ErrorMessage
+                                <br /><button type="submit" class="btn btn-dark">Pay Now</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<br/>
+<br/>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

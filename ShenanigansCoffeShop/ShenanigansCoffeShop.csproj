@@ -175,6 +175,7 @@
     <Content Include="Media\cupcakes\cupcake3.png" />
     <Content Include="Media\cupcakes\cupcake4.png" />
     <Content Include="Media\cupcakes\cupcake5.png" />
+    <Content Include="Media\GOAT.png" />
     <Content Include="Media\HotBeverages\coffee.png" />
     <Content Include="Media\HotBeverages\coffee2.png" />
     <Content Include="Media\HotBeverages\coffee3.png" />
@@ -191,6 +192,7 @@
     <Content Include="Media\icedCofee.png" />
     <Content Include="Media\Overzicht.png" />
     <Content Include="Media\sandwich2.png" />
+    <Content Include="Media\shoppingcart.png" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -224,11 +226,11 @@
     <Content Include="Views\Menu\ColdBeverages.cshtml" />
     <Content Include="Views\Menu\CakesNCupcakes.cshtml" />
     <Content Include="Views\Manager\EditItem.cshtml" />
+    <Content Include="Views\OrderList\OrderList.cshtml" />
+    <Content Include="Views\Payment\CreditCardPayment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\OrderList\" />
-    <Folder Include="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
