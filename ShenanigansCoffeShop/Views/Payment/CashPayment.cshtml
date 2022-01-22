@@ -22,28 +22,17 @@
                                             @Html.ValidationMessage("Invalid Details")
                                         </div>
                                     }
-                                    <label for="fname">Credit Card Number</label><br />
-                                    <input type="text" id="CCN" name="CCN" placeholder="0000 0000 0000 0000" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" required><br />
+                                    <label for="fname">Cash</label><br />
+                                    <input type="number" id="Cash" name="Cash" " required><br />
 
 
-                                    <label for="ExpireDate"><tab />Expire Date</label><br />
-                                    <input type="date" max=@ViewBag.CurrentTime id="ExpireDate" name="ExpireDate" required /><br />
+                                    @Html.ViewBag.ErrorMessage
+                                    <br /><button type="submit" class="btn btn-dark">Commit Payment </button><br/><br/>
 
-                                    <label for="CVV">CVV (Security Number)</label><br />
-                                    <input type="number" id="CVV" name="CVV" pattern="[0-9]{3}"><br />
+                                    <label for="STR"><tab />Sum to return</label><br />
+                                    <input type="number" id="STR" name="STR" /><br />
 
-                                    <label for="ID">ID Number</label><br />
-                                    <input type="number" id="ID" name="ID" pattern="[0-9]{9}"><br />
-
-                                    <label for="fname">First Name</label><br />
-                                    <input type="text" id="fname" name="fname"><br />
-
-                                    <label for="lanem">Last Name</label><br>
-                                    <input type="text" id="lname" name="lanme"><br />
                                 </div>
-
-                                @Html.ViewBag.ErrorMessage
-                                <br /><button type="submit" class="btn btn-dark">Pay Now</button>
 
                             </form>
                         </div>
@@ -53,9 +42,10 @@
         </div>
     </div>
 </div>
-    
-<br/>
-<br/>
+
+<br />
+<br />
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+

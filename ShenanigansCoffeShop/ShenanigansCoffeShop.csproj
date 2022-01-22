@@ -228,6 +228,7 @@
     <Content Include="Views\Manager\EditItem.cshtml" />
     <Content Include="Views\OrderList\OrderList.cshtml" />
     <Content Include="Views\Payment\CreditCardPayment.cshtml" />
+    <Content Include="Views\Payment\CashPayment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
