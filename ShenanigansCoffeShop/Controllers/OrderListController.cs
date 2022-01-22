@@ -52,7 +52,7 @@ namespace ShenanigansCoffeShop.Controllers
             OrderListDal OLdal = new OrderListDal();
             OrderListViewModel TOvm = new OrderListViewModel();
             
-            OrderListModel checkItem = OLdal.OrderList.Where(x => x.o_num == orderNum && x.item_id == item.item_id).FirstOrDefault();
+            OrderListModel checkItem = OLdal.OrderList.ToList().Where(x => x.o_num == orderNum && x.item_id == item.item_id).FirstOrDefault();
             if (checkItem != null)
             {
                 checkItem.num_of_orders++;
@@ -68,8 +68,9 @@ namespace ShenanigansCoffeShop.Controllers
                 OLdal.OrderList.Add(newItem);
             }
 
-
             OLdal.SaveChanges();
+            TotalOrderDal todal = new TotalOrderDal();
+            Session["CurrentOrderObj"] = todal.TotalOrderList.ToList().Find(x => x.o_num == ((TotalOrderModel)Session["CurrentOrderObj"]).o_num);
             TOvm.Orders = OLdal.OrderList.ToList().FindAll(x => x.o_num == orderNum);
             return View("OrderList", TOvm);
         }

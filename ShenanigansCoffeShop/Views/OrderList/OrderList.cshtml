@@ -14,6 +14,8 @@
                                 {
                                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" font-family: Lucida Handwriting;">Would like to Checkout?</p>
                                     <h2>Order No: @(((ShenanigansCoffeShop.Models.TotalOrderModel)Session["CurrentOrderObj"]).o_num)</h2>
+                                    <hr/>
+
                                     foreach (ShenanigansCoffeShop.Models.OrderListModel order in Model.Orders)
                                     {
                                         for (int i = 0; i < order.num_of_orders; i++)
@@ -25,7 +27,7 @@
                                             </div>
                                         }
                                     }
-                                    <div>Total Price: @(((ShenanigansCoffeShop.Models.TotalOrderModel)Session["CurrentOrderObj"]).totalprice)</div>
+                                    <div>Total Price: @(((ShenanigansCoffeShop.Models.TotalOrderModel)Session["CurrentOrderObj"]).totalprice)₪</div>
                                 }
                                 else
                                 {
@@ -33,10 +35,11 @@
                                 }
 
                             </div>
-                      </div>
-                 </div>
-             </div>
-         </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
