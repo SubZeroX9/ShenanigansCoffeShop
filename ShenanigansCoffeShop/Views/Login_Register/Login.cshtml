@@ -30,10 +30,6 @@
                                         <label asp-for="password" for="Password">Password</label>
                                         <input name="password" asp-for="password" type="password" class="form-control" id="Password" placeholder="Password" value=@ViewData["Password"]>
                                     </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="rememberCheckBox">
-                                        <label class="form-check-label" for="rememberCheckBox">Remember me</label>
-                                    </div>
                                     @Html.ViewBag.ErrorMessage
                                     <br /><button type="submit" class="btn btn-dark">Login</button>
                                     <div>
