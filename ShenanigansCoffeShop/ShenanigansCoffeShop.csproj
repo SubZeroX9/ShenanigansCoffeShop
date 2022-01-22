@@ -176,6 +176,7 @@
     <Content Include="Media\cupcakes\cupcake3.png" />
     <Content Include="Media\cupcakes\cupcake4.png" />
     <Content Include="Media\cupcakes\cupcake5.png" />
+    <Content Include="Media\giphy.gif" />
     <Content Include="Media\GOAT.png" />
     <Content Include="Media\HotBeverages\coffee.png" />
     <Content Include="Media\HotBeverages\coffee2.png" />
