@@ -1,4 +1,4 @@
-﻿@model ShenanigansCoffeShop.Models.OrderListModel
+﻿@model ShenanigansCoffeShop.ViewModel.OrderListViewModel
 <br />
 <br />
 <div class="container h-100">
@@ -10,20 +10,26 @@
                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                             <div class="container">
-
-                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" font-family: Lucida Handwriting;">Would like to Checkout?</p>
-
-                                @foreach (ShenanigansCoffeShop.Models.OrderListModel item in Model.OrderList)
+                                @if (Session["CurrentOrderObj"] != null)
                                 {
-                                    <div class="row py-3 px-lg-5">
-                                        <div class="col py-3 px-lg-5">
-                                            @item.item_id/div>
-
-                                            <div class="col py-3 px-lg-5">@item.item_name</div>
-
-                                            <div class="col py-3 px-lg-5">@item.price₪</div>
-                                        </div>
-                                    </div>
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" font-family: Lucida Handwriting;">Would like to Checkout?</p>
+                                    <h2>Order No: @(((ShenanigansCoffeShop.Models.TotalOrderModel)Session["CurrentOrderObj"]).o_num)</h2>
+                                    foreach (ShenanigansCoffeShop.Models.OrderListModel order in Model.Orders)
+                                    {
+                                        for (int i = 0; i < order.num_of_orders; i++)
+                                        {
+                                            <div class="row py-3 px-lg-5">
+                                                <div class="col py-3 px-lg-5">@order.item_id</div>
+                                                <div class="col py-3 px-lg-5">@order.item_name</div>
+                                                <div class="col py-3 px-lg-5">@order.price₪</div>
+                                            </div>
+                                        }
+                                    }
+                                    <div>Total Price: @(((ShenanigansCoffeShop.Models.TotalOrderModel)Session["CurrentOrderObj"]).totalprice)</div>
+                                }
+                                else
+                                {
+                                    <h2>Nothing was Ordered</h2>
                                 }
 
                             </div>
