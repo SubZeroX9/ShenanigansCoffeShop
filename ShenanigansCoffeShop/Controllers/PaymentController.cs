@@ -25,14 +25,14 @@ namespace ShenanigansCoffeShop.Controllers
         {
 
             CTableDal ctdal = new CTableDal();
-            CTableModel usedtable = ctdal.Tables.ToList().Find(x => x.t_num == ((TotalOrderModel)Session["CurrentOrdObj"]).t_num);
+            CTableModel usedtable = ctdal.Tables.ToList().Find(x => x.t_num == ((TotalOrderModel)Session["CurrentOrderObj"]).t_num);
             usedtable.availability = true;
             ctdal.SaveChanges();
 
             TotalOrderDal todal = new TotalOrderDal();
-            TotalOrderModel currentorder = todal.TotalOrderList.ToList().Find(x => x.o_num == ((TotalOrderModel)Session["CurrentOrdObj"]).o_num);
+            TotalOrderModel currentorder = todal.TotalOrderList.ToList().Find(x => x.o_num == ((TotalOrderModel)Session["CurrentOrderObj"]).o_num);
             currentorder.currentOrder = false;
-            Session["CurrentOrdObj"] = null;
+            Session["CurrentOrderObj"] = null;
 
             return View("PaymentSuccess");
         }
@@ -40,20 +40,20 @@ namespace ShenanigansCoffeShop.Controllers
         public ActionResult CashPaymentProccess()
         {
             string cashpayed = Request.Form["Cash"];
-            if (Convert.ToInt32(cashpayed) < ((TotalOrderModel) Session["CurrentOrdObj"]).totalprice)
+            if (Convert.ToInt32(cashpayed) < ((TotalOrderModel) Session["CurrentOrderObj"]).totalprice)
             {
                 ViewBag.ErrorMessage = "Not Enough Cash Payed";
                 return View("CashPayment");
             }
             CTableDal ctdal = new CTableDal();
-            CTableModel usedtable = ctdal.Tables.ToList().Find(x => x.t_num == ((TotalOrderModel) Session["CurrentOrdObj"]).t_num);
+            CTableModel usedtable = ctdal.Tables.ToList().Find(x => x.t_num == ((TotalOrderModel) Session["CurrentOrderObj"]).t_num);
             usedtable.availability = true;
             ctdal.SaveChanges();
 
             TotalOrderDal todal = new TotalOrderDal();
-            TotalOrderModel currentorder = todal.TotalOrderList.ToList().Find(x => x.o_num == ((TotalOrderModel) Session["CurrentOrdObj"]).o_num);
+            TotalOrderModel currentorder = todal.TotalOrderList.ToList().Find(x => x.o_num == ((TotalOrderModel) Session["CurrentOrderObj"]).o_num);
             currentorder.currentOrder = false;
-            Session["CurrentOrdObj"] = null;
+            Session["CurrentOrderObj"] = null;
 
             return View("PaymentSuccess");
         }
