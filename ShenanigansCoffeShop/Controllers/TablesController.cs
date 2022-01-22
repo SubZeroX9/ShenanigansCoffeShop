@@ -37,28 +37,32 @@ namespace ShenanigansCoffeShop.Controllers
                 totalOrderDal.TotalOrderList.Add(newTotalOrder);
                 totalOrderDal.SaveChanges();
                 Session["CurrentOrderObj"] = newTotalOrder;
+                CTableDal ctDal = new CTableDal();
+                CTableModel tableModel = ctDal.Tables.ToList().Find(x => x.t_num == table.t_num);
+                tableModel.availability = false;
+                ctDal.SaveChanges();
             }
             else
             {
-                if (((TotalOrderModel) Session["CurrentOrderObj"]).t_num != null)
+                CTableDal ctDal = new CTableDal();
+                if (((TotalOrderModel) Session["CurrentOrderObj"]).t_num > 0)
                 {
-                    CTableDal CTdal = new CTableDal();
-                    CTableModel prevTable = CTdal.Tables.Where(x => x.s_num == ((TotalOrderModel)Session["CurrentOrderObj"]).t_num).FirstOrDefault();
+                    CTableModel prevTable = ctDal.Tables.ToList().Find(x => x.t_num == ((TotalOrderModel)Session["CurrentOrderObj"]).t_num);
                     prevTable.availability = true;
-                    CTdal.SaveChanges();
+                    ctDal.SaveChanges();
                 }
 
                 TotalOrderDal totalOrderDal = new TotalOrderDal();
-                TotalOrderModel currentOrder = totalOrderDal.TotalOrderList.Where(x => x.o_num == ((TotalOrderModel) Session["CurrentOrderObj"]).o_num).FirstOrDefault();
+                TotalOrderModel currentOrder = totalOrderDal.TotalOrderList.ToList().Find(x => x.o_num == ((TotalOrderModel) Session["CurrentOrderObj"]).o_num);
                 currentOrder.t_num = table.t_num;
                 totalOrderDal.SaveChanges();
                 Session["CurrentOrderObj"] = currentOrder;
+                CTableModel tableModel = ctDal.Tables.ToList().Find(x => x.t_num == table.t_num);
+                tableModel.availability = false;
+                ctDal.SaveChanges();
             }
 
-            CTableDal ctDal = new CTableDal();
-            CTableModel tableModel = ctDal.Tables.Where(x => x.s_num == table.t_num).FirstOrDefault();
-            tableModel.availability = false;
-            ctDal.SaveChanges();
+
 
             return View("Index");
         }

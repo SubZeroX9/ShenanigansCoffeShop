@@ -1,4 +1,5 @@
 ﻿
+@using ShenanigansCoffeShop.Models
 @model ShenanigansCoffeShop.Models.UserModel
 <br />
 <br />
@@ -11,10 +12,8 @@
                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                             <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" font-family: Lucida Handwriting;">Payment</p>
-                            <form action="ProcessLogin" method="post" style="align-content:center;">
-
-
-
+                            <form action="CashPaymentProccess" method="post" style="align-content:center;">
+                                <div id="totalPrice">@(((TotalOrderModel)Session["CurrentOrdObj"]).totalprice)₪</div>
                                 <div class="form-group">
                                     @if (!ViewData.ModelState.IsValid)
                                     {
@@ -23,14 +22,14 @@
                                         </div>
                                     }
                                     <label for="fname">Cash</label><br />
-                                    <input type="number" id="Cash" name="Cash" " required><br />
+                                    <input type="number" id="Cash" name="Cash" required><br />
 
 
                                     @Html.ViewBag.ErrorMessage
-                                    <br /><button type="submit" class="btn btn-dark">Commit Payment </button><br/><br/>
+                                    <br /><button type="submit" class="btn btn-dark">Commit Payment </button><br /><br />
 
                                     <label for="STR"><tab />Sum to return</label><br />
-                                    <input type="number" id="STR" name="STR" /><br />
+                                    <input type="number" id="STR" name="STR"/><br />
 
                                 </div>
 
@@ -41,6 +40,18 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        var input = document.querySelector('Cash');
+        var STR = document.getElementById('STR');
+        var totalPrice = document.getElementById('totalPrice').value.replace("₪","");
+
+        input.addEventListener('Cash', updateValue);
+
+        function updateValue(e) {
+            STR.value = totalPrice-input.value;
+        }
+
+    </script>
 </div>
 
 <br />
