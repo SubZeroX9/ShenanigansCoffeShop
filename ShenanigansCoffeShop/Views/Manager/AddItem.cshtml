@@ -1,14 +1,17 @@
 ﻿@model ShenanigansCoffeShop.Models.ItemModel
-<div class="p-3" style="background-color: #eee;">
+<br />
+<br />
+<br />
+<div class="p-3" style="background-color: whitesmoke;">
 
     <form action="ProccessAddItem" method="post" class="justify-content-center" enctype="multipart/form-data">
-        <h3>Add New Item</h3>
-        <hr/>
+        <h3 style="text-align: center; font-family: Lucida Handwriting; ">Add New Item</h3>
+        <hr />
         <div class="d-flex flex-row align-items-center mb-4 text-danger">@ViewBag.ErrorMassage</div>
         <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
                 <label class="form-label" for="ItemId">Item Id</label>
-                <input type="text" id="ItemId" name="item_id" class="form-control" pattern="[0-9]{5}" required/>
+                <input type="text" id="ItemId" name="item_id" class="form-control" pattern="[0-9]{5}" required />
                 <small class="text-danger form-text">@ViewBag.ErrorMassage</small>
             </div>
         </div>
@@ -16,21 +19,21 @@
         <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
                 <label class="form-label" for="ItemName">Item Name</label>
-                <input type="text" id="ItemName" name="item_name" class="form-control" required/>
+                <input type="text" id="ItemName" name="item_name" class="form-control" required />
             </div>
         </div>
 
         <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
                 <label class="form-label" for="ItemPrice">Item price</label>
-                <input type="text" id="ItemPrice" name="price" class="form-control" required/>
+                <input type="text" id="ItemPrice" name="price" class="form-control" required />
             </div>
         </div>
 
         <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
                 <label class="form-label" for="ItemImage">Item Image</label>
-                <input type="file" id="ItemImage" accept="image/*" name="ImagePost" class="form-control" required/>
+                <input type="file" id="ItemImage" accept="image/*" name="ImagePost" class="form-control" required />
             </div>
         </div>
 
@@ -48,17 +51,19 @@
         <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
                 <label class="form-label" for="ItemDescription">Item Description</label>
-                <textarea  rows="15" cols="15" id="ItemDescription" name="descript" class="form-control" required ></textarea>
+                <textarea rows="15" cols="15" id="ItemDescription" name="descript" class="form-control" required></textarea>
             </div>
         </div>
 
 
         <div class="d-flex mx-4 mb-3 mb-lg-4">
-            <button type="submit" class="btn btn-primary btn-lg">Add Item</button>
+            <button type="submit" class="btn btn-dark btn-lg">Add Item</button>
         </div>
 
     </form>
 
-
-
 </div>
+
+<br />
+<br />
+<br />

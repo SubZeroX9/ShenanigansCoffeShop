@@ -187,6 +187,7 @@
     <Content Include="Media\HotBeverages\coffee6.png" />
     <Content Include="Media\HotBeverages\coffee7.png" />
     <Content Include="Media\HotBeverages\coffee8.png" />
+    <Content Include="Media\mail.gif" />
     <Content Include="Media\sandwich.png" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Media\cupcake.png" />
