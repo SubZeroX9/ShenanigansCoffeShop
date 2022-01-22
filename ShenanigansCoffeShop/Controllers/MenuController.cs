@@ -41,5 +41,21 @@ namespace ShenanigansCoffeShop.Controllers
             ivm.Items = userdal.Items.ToList<ItemModel>().FindAll(model => model.m_type == "CakesNCupcakes");
             return View("CakesNCupcakes", ivm);
         }
+
+        public ActionResult Cookies()
+        {
+            ItemDal userdal = new ItemDal();
+            ItemViewModel ivm = new ItemViewModel();
+            ivm.Items = userdal.Items.ToList<ItemModel>().FindAll(model => model.m_type == "cookies");
+            return View("cookies", ivm);
+        }
+
+        public ActionResult Sandwitches()
+        {
+            ItemDal userdal = new ItemDal();
+            ItemViewModel ivm = new ItemViewModel();
+            ivm.Items = userdal.Items.ToList<ItemModel>().FindAll(model => model.m_type == "sandwiches");
+            return View("sandwiches", ivm);
+        }
     }
 }
