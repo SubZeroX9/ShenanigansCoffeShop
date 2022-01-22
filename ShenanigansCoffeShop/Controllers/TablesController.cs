@@ -43,7 +43,7 @@ namespace ShenanigansCoffeShop.Controllers
                 if (((TotalOrderModel) Session["CurrentOrderObj"]).t_num != null)
                 {
                     CTableDal CTdal = new CTableDal();
-                    CTableModel prevTable = ctDal.Tables.Where(x => x.s_num == ((TotalOrderModel)Session["CurrentOrderObj"]).t_num).FirstOrDefault();
+                    CTableModel prevTable = CTdal.Tables.Where(x => x.s_num == ((TotalOrderModel)Session["CurrentOrderObj"]).t_num).FirstOrDefault();
                     prevTable.availability = true;
                     CTdal.SaveChanges();
                 }

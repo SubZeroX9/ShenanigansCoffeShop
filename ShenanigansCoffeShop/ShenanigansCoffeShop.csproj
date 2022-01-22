@@ -233,9 +233,7 @@
     <Content Include="Views\Shared\Index.cshtml" />
     <Content Include="Views\Menu\Menu.cshtml" />
     <Content Include="Views\Manager\AddItem.cshtml" />
-    <Content Include="Views\Menu\HotBeverages.cshtml" />
-    <Content Include="Views\Menu\ColdBeverages.cshtml" />
-    <Content Include="Views\Menu\CakesNCupcakes.cshtml" />
+    <Content Include="Views\Menu\ItemDisplay.cshtml" />
     <Content Include="Views\Manager\EditItem.cshtml" />
     <Content Include="Views\OrderList\OrderList.cshtml" />
     <Content Include="Views\Payment\CreditCardPayment.cshtml" />
